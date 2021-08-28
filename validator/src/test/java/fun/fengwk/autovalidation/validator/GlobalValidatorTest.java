@@ -1,7 +1,8 @@
-package fun.fengwk.autovalidation.validation;
+package fun.fengwk.autovalidation.validator;
 
 import org.junit.Test;
 
+import javax.validation.ConstraintDeclarationException;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 import javax.validation.constraints.Max;
@@ -75,6 +76,20 @@ public class GlobalValidatorTest {
     @Test(expected = ConstraintViolationException.class)
     public void test10() {
         new PImpl().a(null);
+    }
+
+    @Test(expected = ConstraintViolationException.class)
+    public void test11() {
+        User user = new User();
+        user.username = "";
+        CheckObj8.check(Arrays.asList(user), 10);
+    }
+
+    @Test(expected = ConstraintDeclarationException.class)
+    public void test12() {
+        User user = new User();
+        user.username = "username";
+        new CheckObj9().check(user, 18);
     }
 
     static class User {
@@ -162,6 +177,23 @@ public class GlobalValidatorTest {
 
         public static void check(@NotEmpty String name, @Min(0) int age) {
             GlobalValidator.checkStaticMethodParameters(CheckObj7.class, "check", new Class<?>[] {String.class, int.class}, new Object[] {name, age}, new Class<?>[] { Update.class });
+        }
+
+    }
+
+    static class CheckObj8 {
+
+        public static void check(@Valid List<User> userList, @Max(15) int len) {
+            GlobalValidator.checkStaticMethodParameters(CheckObj8.class, "check", new Class<?>[] {List.class, int.class}, new Object[] {userList, len}, new Class<?>[0]);
+        }
+
+    }
+
+    static class CheckObj9 implements ICheckObj {
+
+        @Override
+        public void check(@Valid User user, @Max(value = 15, message = "超过") int len) {
+            GlobalValidator.checkMethodParameters(CheckObj9.class, "check", new Class<?>[] {User.class, int.class}, this, new Object[] {user, len}, new Class<?>[0]);
         }
 
     }

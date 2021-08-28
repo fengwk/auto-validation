@@ -11,7 +11,7 @@
 
     <groupId>fun.fengwk.auto-validation</groupId>
     <artifactId>auto-validation-parent</artifactId>
-    <version>0.0.7-SNAPSHOT</version>
+    <version>0.0.10-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -49,7 +49,7 @@
     </distributionManagement>
 
     <modules>
-    	<module>validation</module>
+    	<module>validator</module>
         <module>annotation</module>
         <module>processor</module>
         <module>example</module>
@@ -72,17 +72,17 @@
         <dependencies>
             <dependency>
                 <groupId>fun.fengwk.auto-validation</groupId>
-                <artifactId>validation</artifactId>
+                <artifactId>auto-validation-validator</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>fun.fengwk.auto-validation</groupId>
-                <artifactId>annotation</artifactId>
+                <artifactId>auto-validation-annotation</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>fun.fengwk.auto-validation</groupId>
-                <artifactId>processor</artifactId>
+                <artifactId>auto-validation-processor</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

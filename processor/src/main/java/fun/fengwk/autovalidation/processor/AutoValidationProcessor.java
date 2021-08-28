@@ -212,7 +212,7 @@ public class AutoValidationProcessor extends AbstractProcessor {
         if (isConstructor) {
             validateParameters = treeMaker.Apply(
                     List.nil(),
-                    memberAccess( fun.fengwk.autovalidation.validation.GlobalValidator.class.getName() + ".checkConstructorParameters"),
+                    memberAccess( fun.fengwk.autovalidation.validator.GlobalValidator.class.getName() + ".checkConstructorParameters"),
                     List.of(
                             treeMaker.ClassLiteral(classSymbol),
                             treeMaker.NewArray(memberAccess("Class"), List.nil(), List.from(pClasses)),
@@ -223,7 +223,7 @@ public class AutoValidationProcessor extends AbstractProcessor {
         } else if (!executableElement.getModifiers().contains(Modifier.STATIC)) {
             validateParameters = treeMaker.Apply(
                     List.nil(),
-                    memberAccess(fun.fengwk.autovalidation.validation.GlobalValidator.class.getName() + ".checkMethodParameters"),
+                    memberAccess(fun.fengwk.autovalidation.validator.GlobalValidator.class.getName() + ".checkMethodParameters"),
                     List.of(
                             treeMaker.ClassLiteral(classSymbol),
                             treeMaker.Literal(executableElement.getSimpleName().toString()),
@@ -236,7 +236,7 @@ public class AutoValidationProcessor extends AbstractProcessor {
         } else {
             validateParameters = treeMaker.Apply(
                     List.nil(),
-                    memberAccess(fun.fengwk.autovalidation.validation.GlobalValidator.class.getName() + ".checkStaticMethodParameters"),
+                    memberAccess(fun.fengwk.autovalidation.validator.GlobalValidator.class.getName() + ".checkStaticMethodParameters"),
                     List.of(
                             treeMaker.ClassLiteral(classSymbol),
                             treeMaker.Literal(executableElement.getSimpleName().toString()),

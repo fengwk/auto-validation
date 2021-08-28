@@ -7,10 +7,10 @@
     <parent>
         <artifactId>auto-validation-parent</artifactId>
         <groupId>fun.fengwk.auto-validation</groupId>
-        <version>0.0.7-SNAPSHOT</version>
+        <version>0.0.10-SNAPSHOT</version>
     </parent>
 
-    <artifactId>validation</artifactId>
+    <artifactId>auto-validation-validator</artifactId>
     
     <dependencies>
         <dependency>

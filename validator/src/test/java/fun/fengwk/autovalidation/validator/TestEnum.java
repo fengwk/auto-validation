@@ -1,4 +1,4 @@
-package fun.fengwk.autovalidation.validation;
+package fun.fengwk.autovalidation.validator;
 
 import java.util.Arrays;
 

@@ -41,13 +41,13 @@ AutoValidation框架的使用非常简单，只需要添加下方依赖就能够
 ```xml
 <dependency>
     <groupId>fun.fengwk.auto-validation</groupId>
-    <artifactId>validation</artifactId>
-    <version>0.0.7</version>
+    <artifactId>auto-validation-validator</artifactId>
+    <version>0.0.10</version>
 </dependency>
 <dependency>
     <groupId>fun.fengwk.auto-validation</groupId>
-    <artifactId>processor</artifactId>
-    <version>0.0.7</version>
+    <artifactId>auto-validation-processor</artifactId>
+    <version>0.0.10</version>
     <scope>provided</scope>
 </dependency>
 ```
