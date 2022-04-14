@@ -1,0 +1,56 @@
+# 个人.editorconfig配置
+# author fengwk
+# https://editorconfig.org/
+
+# 该标志声明当前配置文件已经是根部，相应的配置解析框架应该停止向上扫描
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = false
+
+[*.{java,groovy,xml}]
+indent_style = space
+indent_size = 4
+
+[*.yml]
+indent_style = space
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+
+# 参考 gofmt 工具
+[*.go]
+indent_style = tab
+
+# 参考 Google c++ 风格指南
+# https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/formatting/
+[*.{h,c,cpp}]
+indent_style = space
+indent_size = 2
+
+# 参考 Google python 风格规范
+# https://google-styleguide.readthedocs.io/zh_CN/latest/google-python-styleguide/python_style_rules.html#
+[*.py]
+indent_style = space
+indent_size = 2
+
+# 参考 Google Shell 风格指南
+# https://google-styleguide.readthedocs.io/zh_CN/latest/google-shell-styleguide/formatting.html
+[*.{sh,bash,zsh}]
+indent_style = space
+indent_size = 2
+
+# 参考 Google json 风格指南
+# https://google-styleguide.readthedocs.io/zh_CN/latest/google-shell-styleguide/formatting.html
+[*.json]
+indent_style = space
+indent_size = 2
+
+# 参考 Google Javascript风格规范
+# https://google-styleguide.readthedocs.io/zh_CN/latest/google-javascript-styleguide/javascript_style_rules.html#
+[*.{js,json,html,css,less,sass,ts,vue,jsx}]
+indent_style = space
+indent_size = 2

@@ -11,7 +11,7 @@
 
     <groupId>fun.fengwk.auto-validation</groupId>
     <artifactId>auto-validation-parent</artifactId>
-    <version>0.0.10-SNAPSHOT</version>
+    <version>0.0.11-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -56,11 +56,12 @@
     </modules>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <javax-validation.version>2.0.1.Final</javax-validation.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+        <validation-api.version>2.0.2</validation-api.version>
         <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
         <glassfish-el.version>3.0.3</glassfish-el.version>
         <javassist.version>3.28.0-GA</javassist.version>
@@ -86,9 +87,9 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>javax.validation</groupId>
-                <artifactId>validation-api</artifactId>
-                <version>${javax-validation.version}</version>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${validation-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.hibernate.validator</groupId>
