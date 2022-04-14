@@ -7,15 +7,15 @@
     <parent>
         <artifactId>auto-validation-parent</artifactId>
         <groupId>fun.fengwk.auto-validation</groupId>
-        <version>0.0.10-SNAPSHOT</version>
+        <version>0.0.11-SNAPSHOT</version>
     </parent>
 
     <artifactId>auto-validation-validator</artifactId>
     
     <dependencies>
         <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.hibernate.validator</groupId>

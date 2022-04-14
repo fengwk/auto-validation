@@ -93,3 +93,6 @@ buildNumber.properties
 .metadata
 
 .svn
+
+*.log
+*.gz

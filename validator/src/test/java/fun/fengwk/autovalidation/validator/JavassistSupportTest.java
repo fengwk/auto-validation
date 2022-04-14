@@ -32,7 +32,8 @@ public class JavassistSupportTest {
     public void test2() throws NotFoundException, NoSuchMethodException {
         Method rawMethod = JavassistSupportTest.class.getDeclaredMethod("testMethod", String.class, String.class);
         List<String> parameterNames = JavassistSupport.getParameterNames(rawMethod);
-        System.out.println(parameterNames);
+        assert parameterNames.get(0).equals("a");
+        assert parameterNames.get(1).equals("b");
     }
 
     @Test
@@ -40,7 +41,7 @@ public class JavassistSupportTest {
             InvocationTargetException, IllegalAccessException, IOException, BadBytecode {
         Method rawMethod = JavassistSupportTest.class.getDeclaredMethod("testMethod", String.class, String.class);
         CtClass cc = JavassistSupport.genValidationCtClass(rawMethod);
-        write(cc, "d:/");
+        write(cc, System.getProperty("java.io.tmpdir") + File.separator);
     }
 
 }
