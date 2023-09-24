@@ -11,7 +11,7 @@
 
     <groupId>fun.fengwk.auto-validation</groupId>
     <artifactId>auto-validation-parent</artifactId>
-    <version>0.0.12-SNAPSHOT</version>
+    <version>0.0.13</version>
     <packaging>pom</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>

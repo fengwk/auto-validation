@@ -1,9 +1,6 @@
 package fun.fengwk.autovalidation.validator;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
-import javax.validation.Validation;
-import javax.validation.Validator;
+import javax.validation.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.Set;
@@ -16,9 +13,15 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class GlobalValidator {
     
-    private static volatile Validator instance = Validation.buildDefaultValidatorFactory().getValidator();
+    private static volatile Validator instance;
 
     private static final ConcurrentMap<Method, ValidationProxy> PROXY_CACHE = new ConcurrentHashMap<>();
+
+    static {
+        ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+        instance = validatorFactory.getValidator();
+        validatorFactory.close();
+    }
     
     private GlobalValidator() {}
     
@@ -66,7 +69,7 @@ public class GlobalValidator {
             throw new IllegalStateException(e);
         }
 
-        ValidationProxy proxy = PROXY_CACHE.computeIfAbsent(method, k -> new ValidationProxy(k));
+        ValidationProxy proxy = PROXY_CACHE.computeIfAbsent(method, ValidationProxy::new);
         proxy.check(parameterValues, groups);
     }
 
